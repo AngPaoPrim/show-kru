@@ -15,6 +15,20 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 20px;
+    animation: Up 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes Up {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    
 }
 
 @keyframes gradientShift {
@@ -48,6 +62,8 @@ h1 {
         0 0 50px #00ffff,
         0 0 75px #00ffff;
     animation: glowPulse 3s ease-in-out infinite alternate;
+    animation: UpDown 1.5s ease-in-out infinite alternate;
+    position: relative;
 }
 
 .wave-letter {
@@ -165,6 +181,8 @@ h1 {
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    animation: UpDown 1.5s ease-in-out infinite alternate;
+    position: relative;
 }
 
 #name::placeholder {
@@ -205,7 +223,9 @@ button {
     overflow: hidden;
     text-transform: uppercase;
     letter-spacing: 1px;
+    animation: UpDown 1.5s ease-in-out infinite alternate;
 }
+
 
 button::before {
     content: '';
@@ -256,6 +276,7 @@ button:active {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    animation: UpDown 1.5s ease-in-out infinite alternate;
 }
 
 #output::before {
@@ -336,4 +357,16 @@ button:active {
         padding: 12px 24px;
         font-size: 14px;
     }
+}
+
+@keyframes UpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+}
 }

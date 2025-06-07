@@ -1,4 +1,5 @@
 function SaveData() {
+    const name = document.getElementById("name");
     var data = {
         name: document.getElementById("name").value,
     }
@@ -12,6 +13,11 @@ function SaveData() {
     .then(response => {
         if (response.ok) {
             alert("Data saved successfully!");
+            GetData();
+            name.value = ""; // Clear input field after saving
+            setTimeout(() => {
+                ClearOutPut();
+            }, 3000); // Clear data after 5 seconds
         } else {
             alert("Error saving data.");
         }
@@ -52,6 +58,11 @@ function ClearData() {
             alert("Error clearing data.");
         }
     });
+}
+
+function ClearOutPut() {
+    var output = document.getElementById("output");
+    output.innerHTML = "";
 }
 
 document.addEventListener("DOMContentLoaded", function() {
